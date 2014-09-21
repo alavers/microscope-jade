@@ -1,9 +1,8 @@
-template(name="errors")
-  .errors.row-fluid
-    each errors
-      +error
+template(name="meteorErrors")
+  each errors
+    +meteorError
 
-template(name="error")
+template(name="meteorError")
   .alert.alert-error
     button.close(type="button" data-dismiss="alert") &times;
     | #{message}
