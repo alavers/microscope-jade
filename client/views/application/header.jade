@@ -7,6 +7,10 @@ template(name="header")
         span.icon-bar
       a.brand(href="{{pathFor 'postsList'}}") Microscope
       .nav-collapse.collapse
+        ul.nav
+          if currentUser
+            li
+              a(href="{{pathFor 'postSubmit'}}") New
         ul.nav.pull-right
           li
             +loginButtons
