@@ -1,11 +1,18 @@
 Posts = new Meteor.Collection('posts');
 
 Posts.allow({
-    update: function(userId, doc) {
-        return !! userId;
-    },
-    remove: function(userId, doc) {
-        return !! userId;
+    update: ownsDocument,
+    remove: ownsDocument
+});
+
+Posts.deny({
+    update: function(userId, post, fieldNames) {
+        var denied = (_.without(fieldNames, 'url', 'title').length > 0);
+        if (!denied) {
+            post.lastModified = +(new Date());
+        }
+
+        return denied;
     }
 });
 
