@@ -1,5 +1,11 @@
 Posts = new Meteor.Collection('posts');
 
+// Posts.allow({
+//     insert: function(userId, doc) {
+//         return !! userId;
+//     }
+// });
+
 Meteor.methods({
     post: function(postAttributes) {
         var user = Meteor.user();
