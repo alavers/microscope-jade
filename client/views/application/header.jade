@@ -11,6 +11,8 @@ template(name="header")
           if currentUser
             li
               a(href="{{pathFor 'postSubmit'}}") New
+            li.dropdown
+              +notifications
         ul.nav.pull-right
           li
             +loginButtons
