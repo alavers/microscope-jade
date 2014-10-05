@@ -2,3 +2,6 @@ template(name='postsList')
   div.posts
     each posts
       +postItem
+    if nextPath
+      a.load-more(href='{{nextPath}}')
+        | Load more
