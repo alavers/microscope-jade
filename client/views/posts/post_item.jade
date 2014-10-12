@@ -1,6 +1,6 @@
 template(name="postItem")
   .post
-    a.upvote.btn(href="#") ⬆
+    a.btn.upvote(href="#", class="{{upvotedClass}}") ⬆
     .post-content
       h3
         a(href="#{url}") #{title}
