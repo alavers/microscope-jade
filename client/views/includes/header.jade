@@ -2,19 +2,19 @@ template(name="header")
   header.navbar
     .navbar-inner
       a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
-        span.icon-bar       
+        span.icon-bar
         span.icon-bar
         span.icon-bar
       a.brand(href="{{pathFor 'home'}}") Microscope
       .nav-collapse.collapse
         ul.nav
-          li
+          li(class="{{activeRouteClass 'home' 'newPosts'}}")
             a(href="{{pathFor 'newPosts'}}") New
-          li
+          li(class="{{activeRouteClass 'bestPosts'}}")
             a(href="{{pathFor 'bestPosts'}}") Best
           if currentUser
-            li
-              a(href="{{pathFor 'postSubmit'}}") New
+            li(class="{{activeRouteClass 'postSubmit'}}")
+              a(href="{{pathFor 'postSubmit'}}") Submit Post
             li.dropdown
               +notifications
         ul.nav.pull-right
