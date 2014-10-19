@@ -1,6 +1,6 @@
 template(name='postsList')
   div.posts
-    each posts
+    each postsWithRank
       +postItem
     if nextPath
       a.load-more(href='{{nextPath}}')
